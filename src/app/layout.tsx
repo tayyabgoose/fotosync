@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "./providers";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  Link,
+  Button,
+} from "@nextui-org/react";
+import { FotoSyncLogo } from "./assets/FotoSyncLogo.jsx";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,11 +37,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <Navbar>
+            <NavbarBrand className="hidden sm:flex gap-4 justify-start">
+              <Link color="foreground" href="/" className="hidden sm:flex">
+                <FotoSyncLogo />
+                <p className="font-bold text-inherit">FotoSync</p>
+              </Link>
+            </NavbarBrand>
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+              <NavbarItem>
+                <Link color="foreground" href="/blog">
+                  Blog
+                </Link>
+              </NavbarItem>
+            </NavbarContent>
+            <NavbarContent justify="end">
+              <NavbarItem className="hidden lg:flex">
+                <Link href="/login">Login</Link>
+              </NavbarItem>
+              <NavbarItem>
+                <Button as={Link} color="primary" href="/signup" variant="flat">
+                  Sign Up
+                </Button>
+              </NavbarItem>
+            </NavbarContent>
+          </Navbar>
+          {children}
+        </Providers>
       </body>
     </html>
   );

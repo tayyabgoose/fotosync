@@ -90,3 +90,4 @@ It serves as a photo sharing platform where photographers can showcase their wor
 
 - User Notifications:
   - Implement a notification system for likes, comments, follows, and important updates
+  
