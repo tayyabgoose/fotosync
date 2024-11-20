@@ -1,7 +1,11 @@
+// React and Next.js imports
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
+// Styles
 import "./globals.css";
-import { Providers } from "./providers";
+
+// Components
 import {
   Navbar,
   NavbarBrand,
@@ -13,9 +17,13 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import { FotoSyncLogo } from "./assets/FotoSyncLogo.jsx";
-import Footer from "../components/footer";
+import { Providers } from "./providers";
+import Footer from "@/components/footer";
 
+// Assets
+import { FotoSyncLogo } from "@/components/icons/FotoSyncLogo";
+
+// Fonts
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,21 +35,22 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+// Metadata
 export const metadata: Metadata = {
   title: "FotoSync",
   description: "Your photo sharing platform",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "./favicon.ico", sizes: "any" },
-      { url: "/assets/favicons/icon.svg", sizes: "any" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/assets/favicons/logo.svg", sizes: "any" },
       {
-        url: "/assets/favicons/icon2.png",
+        url: "/assets/favicons/pwa-192x192.png",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        url: "/assets/favicons/icon1.png",
+        url: "/assets/favicons/pwa-512x512.png",
         sizes: "512x512",
         type: "image/png",
       },
