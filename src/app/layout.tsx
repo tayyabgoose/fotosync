@@ -42,8 +42,13 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/assets/favicons/logo.svg", sizes: "any" },
+      { url: "/favicon.ico", sizes: "48x48" },
+      {
+        url: "/assets/favicons/favicon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
+      },
+      { url: "/assets/favicons/logo.svg", type: "image/svg+xml" },
       {
         url: "/assets/favicons/pwa-192x192.png",
         sizes: "192x192",
@@ -64,6 +69,11 @@ export const metadata: Metadata = {
     ],
   },
   themeColor: "#ffffff",
+  appleWebApp: {
+    title: "FotoSync",
+    capable: true,
+    statusBarStyle: "default",
+  },
 };
 
 export default function RootLayout({
