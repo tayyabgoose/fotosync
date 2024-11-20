@@ -41,8 +41,15 @@ export const metadata: Metadata = {
   description: "Your photo sharing platform",
   manifest: "/site.webmanifest",
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
+    icon: "/favicon.ico",
+    apple: [
+      {
+        url: "/assets/favicons/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+    other: [
       {
         url: "/assets/favicons/favicon-96x96.png",
         sizes: "96x96",
@@ -57,13 +64,6 @@ export const metadata: Metadata = {
       {
         url: "/assets/favicons/pwa-512x512.png",
         sizes: "512x512",
-        type: "image/png",
-      },
-    ],
-    apple: [
-      {
-        url: "/assets/favicons/apple-touch-icon.png",
-        sizes: "180x180",
         type: "image/png",
       },
     ],
