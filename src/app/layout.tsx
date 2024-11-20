@@ -30,18 +30,31 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "FotoSync",
   description: "Your photo sharing platform",
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: '/assets/favicons/favicon.ico', sizes: 'any' },
-      { url: '/assets/favicons/icon2.png', sizes: '192x192', type: 'image/png' },
-      { url: '/assets/favicons/icon1.png', sizes: '512x512', type: 'image/png' }
+      { url: "./favicon.ico", sizes: "any" },
+      { url: "/assets/favicons/icon.svg", sizes: "any" },
+      {
+        url: "/assets/favicons/icon2.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/assets/favicons/icon1.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     apple: [
-      { url: '/assets/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      {
+        url: "/assets/favicons/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
-  themeColor: '#ffffff',
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
