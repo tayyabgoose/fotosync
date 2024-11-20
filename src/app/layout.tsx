@@ -41,7 +41,6 @@ export const metadata: Metadata = {
   description: "Your photo sharing platform",
   manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.ico",
     apple: [
       {
         url: "/assets/favicons/apple-touch-icon.png",
