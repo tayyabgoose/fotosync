@@ -12,7 +12,7 @@ export const FotoSyncLogo = () => (
       r="14.4104"
       transform="rotate(-44.5294 22.5 22.5)"
       stroke="black"
-      stroke-width="3"
+      strokeWidth="3"
     />
     <circle
       cx="22.5"

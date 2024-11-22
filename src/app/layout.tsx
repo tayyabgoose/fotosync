@@ -6,22 +6,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 // Components
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  // NavbarMenuToggle,
-  // NavbarMenu,
-  // NavbarMenuItem,
-  Link,
-  Button,
-} from "@nextui-org/react";
+import Nav from "@/components/nav";
 import { Providers } from "./providers";
 import Footer from "@/components/footer";
 
 // Assets
-import { FotoSyncLogo } from "@/components/icons/FotoSyncLogo";
 
 // Fonts
 const geistSans = localFont({
@@ -77,46 +66,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="light" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
           <header>
-            <Navbar>
-              <NavbarBrand className="hidden sm:flex gap-4 justify-start">
-                <Link color="foreground" href="/" className="hidden sm:flex">
-                  <FotoSyncLogo />
-                  <p className="font-bold text-inherit">FotoSync</p>
-                </Link>
-              </NavbarBrand>
-              <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
-                  <Link color="foreground" href="/blog">
-                    Blog
-                  </Link>
-                </NavbarItem>
-              </NavbarContent>
-              <NavbarContent justify="end">
-                <NavbarItem className="hidden lg:flex">
-                  <Link href="/login">Login</Link>
-                </NavbarItem>
-                <NavbarItem>
-                  <Button
-                    as={Link}
-                    color="primary"
-                    href="/signup"
-                    variant="flat"
-                  >
-                    Sign Up
-                  </Button>
-                </NavbarItem>
-              </NavbarContent>
-            </Navbar>
+            <Nav />
           </header>
           {children}
           <footer>
