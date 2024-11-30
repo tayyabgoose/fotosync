@@ -21,7 +21,7 @@ export default function Footer() {
               rel={"noopener noreferrer"}
               className="underline"
             >
-              Hazik Ali
+              Haziq Ali
             </Link>
             .
           </div>
