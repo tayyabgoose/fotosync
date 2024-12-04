@@ -9,6 +9,7 @@ import "./globals.css";
 import Nav from "@/components/nav";
 import { Providers } from "./providers";
 import Footer from "@/components/footer";
+import { SessionProvider } from "@/components/SessionProvider";
 
 // Assets
 
@@ -74,16 +75,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>
-          <header>
-            <Nav />
-          </header>
-          {children}
-          <footer>
-            <Footer />
-          </footer>
-        </Providers>
+        <SessionProvider>
+          <Providers>
+            <header>
+              <Nav />
+            </header>
+            {children}
+            <footer>
+              <Footer />
+            </footer>
+          </Providers>
+        </SessionProvider>
       </body>
     </html>
   );
 }
+

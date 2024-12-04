@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Signup Page - FotoSync",
-  description:
-    "Signup to FotoSync and start sharing your photos with the world!",
-};
-
-export default function LoginPage() {
-  return (
-    <>
-      <h1>This is the signup page.</h1>
-    </>
-  );
+  description: "Signup to FotoSync and start sharing your photos with the world!",
 }
+
+// Separate client component for the signup form
+import { SignupForm } from "./signup-form"
+
+export default function SignupPage() {
+  return <SignupForm />
+}
+
