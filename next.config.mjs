@@ -1,8 +1,19 @@
 /** @type {import('next').NextConfig} */
+import withMDX from "@next/mdx";
+import rehypeHighlight from "rehype-highlight";
+
+const withMDXConfig = withMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [rehypeHighlight],
+  },
+});
+
 const nextConfig = {
   images: {
-    unoptimized: true, // If you want to serve original favicon files
+    unoptimized: true,
   },
 };
 
-export default nextConfig;
+export default withMDXConfig(nextConfig);
