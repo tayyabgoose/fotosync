@@ -22,7 +22,11 @@ import { useState } from "react";
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = ["Blog", "About Us", "Help & Feedback"];
+  const menuItems = [
+    { text: "Blog", href: "/blog" },
+    { text: "About Us", href: "/about" },
+    { text: "Help & Feedback", href: "/help" },
+  ];
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -48,6 +52,11 @@ export default function Nav() {
         <NavbarItem>
           <Link color="foreground" href="/about">
             About Us
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/help">
+            Help & Feedback
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -91,9 +100,14 @@ export default function Nav() {
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link color={"foreground"} className="w-full" href="/" size="lg">
-              {item}
+          <NavbarMenuItem key={`${item.text}-${index}`}>
+            <Link
+              color={"foreground"}
+              className="w-full"
+              href={item.href}
+              size="lg"
+            >
+              {item.text}
             </Link>
           </NavbarMenuItem>
         ))}
